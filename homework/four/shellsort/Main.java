@@ -8,7 +8,7 @@ import homework.helperclass.*;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED100K.csv";
+String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED.csv";
 		
 		ArrayList<IPAddress> ipList = new ArrayList<>();
 		CSVReader.readCSV(path, ipList);

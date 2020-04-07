@@ -22,9 +22,9 @@ public class CSVReader{
 			while (dataScanner.hasNext()) {
 				String data = dataScanner.next();
 				if (index == 0)
-					addr.setIpFrom(Long.parseLong(data));
+					addr.setIpFrom(Long.parseLong(data.replace("\"", "")));
 				else if (index == 1)
-					addr.setIpTo(Long.parseLong(data));
+					addr.setIpTo(Long.parseLong(data.replace("\"", "")));
 				else if (index == 2)
 					addr.setCountryCode(data);
 				else if (index == 3)
