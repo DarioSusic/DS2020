@@ -9,21 +9,21 @@ public class Main {
 		
 		long start;
 		long end;
-		int arrSize = 100000;
+		int arrSize = 20;
 		
 		int[] elements = new int[arrSize];
 		Random random = new Random();
 		
 		for (int i = 0; i < elements.length; i++) {
-			elements[i] = random.nextInt(1000);
+			elements[i] = random.nextInt(100);
 		}
 		
-		int[] selectionElements = elements.clone();
-		int[] insertionElements = elements.clone();
+		//int[] selectionElements = elements.clone();
+		//int[] insertionElements = elements.clone();
 		int[] shellElements = elements.clone();
 		
 		
-		start = System.currentTimeMillis();
+		/*start = System.currentTimeMillis();
 		SelectionSort.sort(selectionElements);
 		end = System.currentTimeMillis();
 		System.out.println("Selection sorting ended in: \t"+ (end - start) +"ms \n");
@@ -35,7 +35,7 @@ public class Main {
 		end = System.currentTimeMillis();
 		System.out.println("Insertion sorting ended in: \t"+ (end - start) +"ms \n");
 		
-		//ShuffleArray.shuffle(elements);
+		//ShuffleArray.shuffle(elements);*/
 		
 		start = System.currentTimeMillis();
 		ShellSort.sort(shellElements);
