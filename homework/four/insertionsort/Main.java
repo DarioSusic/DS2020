@@ -13,7 +13,7 @@ public class Main {
 		ArrayList<IPAddress> ipList = new ArrayList<>();
 		CSVReader.readCSV(path, ipList);
 		
-		IPAddress[] arrObjects = ipList.toArray(new IPAddress[0]);
+		IPAddress[] arrObjects = ipList.toArray(new IPAddress[ipList.size()]);
 		
 		long start = System.currentTimeMillis();
 		InsertionSort.sort(arrObjects);

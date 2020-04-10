@@ -1,4 +1,4 @@
-package lab.two.stack.array;
+package homework.one.stack.array;
 
 public class Main {
 
@@ -7,6 +7,7 @@ public class Main {
 
 		stack.push(2);
 		stack.push(8);
+		stack.push(5);
 		stack.push(5);
 
 		System.out.println(stack.pop());

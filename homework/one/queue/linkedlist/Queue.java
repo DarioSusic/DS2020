@@ -1,8 +1,9 @@
-package lab.two.queue.linkedlist;
+package homework.one.queue.linkedlist;
 
 import java.util.NoSuchElementException;
 
 public class Queue<Item> {
+	private final Queue<Item> Item = null;
 	Node<Item> head;
 	Node<Item> tail;
 	private int length = 0;
@@ -20,15 +21,19 @@ public class Queue<Item> {
 		length++;
 	}
 	
-	public void dequeue(){
+	public Item dequeue(){
+		Item item = null;
 		if (this.head == null) {
 			throw new NoSuchElementException("Queue is empty");
 		} else if (length == 1) {
+			item = this.head.data;
 			this.head = this.tail = null;
 		} else {
+			item = this.head.data;
 			this.head = this.head.next;
 		}
 		length--;
+		return item;
 	}
 	
 	public int size() {

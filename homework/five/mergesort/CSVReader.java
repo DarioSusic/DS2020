@@ -8,23 +8,24 @@ import java.util.Scanner;
 
 public class CSVReader{
 	
-	public static void readCSV(String filePath, List<IPAddressComparator> ipList) throws IOException {
+	public static void readCSV(String filePath, List<IPAddress> ipList) throws IOException {
 		
 		Scanner scanner = new Scanner(new File(filePath));
 		Scanner dataScanner = null;
 		int index = 0;
-				
+		System.out.println("Loading file...");
+		
 		while (scanner.hasNextLine()) {
 			dataScanner = new Scanner(scanner.nextLine());
 			dataScanner.useDelimiter(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-			IPAddressComparator addr = new IPAddressComparator();
-
+			IPAddress addr = new IPAddress();
+			
 			while (dataScanner.hasNext()) {
 				String data = dataScanner.next();
 				if (index == 0)
-					addr.setIpFrom(Long.parseLong(data));
+					addr.setIpFrom(Long.parseLong(data.replace("\"", "")));
 				else if (index == 1)
-					addr.setIpTo(Long.parseLong(data));
+					addr.setIpTo(Long.parseLong(data.replace("\"", "")));
 				else if (index == 2)
 					addr.setCountryCode(data);
 				else if (index == 3)
@@ -40,10 +41,11 @@ public class CSVReader{
 			index = 0;
 			ipList.add(addr);
 		}
+		System.out.println("File Loaded...\n");
 		scanner.close();
 	}
 		
-	public static void writeCSV(IPAddressComparator[] sortedAddress, String fileName) {
+	public static void writeCSV(IPAddress[] sortedAddress, String fileName) {
 		//final String FILE_HEADER = "START IP,END IP,COUNTRY CODE,COUNTRY,REGION,CITY";
         final String NEW_LINE_SEPARATOR = "\n";
         final String COMMA_DELIMITER = ",";
@@ -51,8 +53,9 @@ public class CSVReader{
                 
         try {
 			FileWriter writer = new FileWriter(FILE_PATH);
-					    
-		    for (IPAddressComparator ipAddress : sortedAddress) {
+			System.out.println("Writing file...\n");
+			
+		    for (IPAddress ipAddress : sortedAddress) {
 		    	writer.append(String.valueOf(ipAddress.getIpFrom()));
                 writer.append(COMMA_DELIMITER);
                 writer.append(String.valueOf(ipAddress.getIpTo()));

@@ -1,4 +1,4 @@
-package lab.two.stack.array;
+package homework.one.stack.array;
 
 import java.util.NoSuchElementException;
 
@@ -32,7 +32,6 @@ public class Stack<Item> {
 	/* Create a new internal array with a given capacity */
 	@SuppressWarnings("unchecked")
 	private void resize(int capacity) {
-		assert capacity >= length;
 
 		// textbook implementation
 		Item[] temp = (Item[]) new Object[capacity];

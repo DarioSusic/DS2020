@@ -1,4 +1,4 @@
-package lab.two.queue.linkedlist;
+package homework.one.queue.linkedlist;
 
 public class Node<Item> {
 	Item data;

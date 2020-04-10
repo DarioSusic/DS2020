@@ -1,4 +1,4 @@
-package lab.two.dijkstra;
+package homework.two.dijkstra;
 
 //import lab.two.stack.array.*;
 import lab.two.stack.linkedlist.*;;

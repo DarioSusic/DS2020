@@ -1,8 +1,6 @@
 package homework.five.mergesort;
 
-import java.util.Comparator;
-
-public class IPAddressComparator implements Comparator<IPAddressComparator> {
+public class IPAddress implements Comparable<IPAddress> {
 	private long ipFrom;
 	private long ipTo;
 	private String countryCode;
@@ -10,11 +8,11 @@ public class IPAddressComparator implements Comparator<IPAddressComparator> {
 	private String regionName;
 	private String cityName;
 	
-	public IPAddressComparator() {
+	public IPAddress() {
 		
 	};
 
-	public IPAddressComparator(long ipFrom, long ipTo, String countryCode, String countryName, String regionName,
+	public IPAddress(long ipFrom, long ipTo, String countryCode, String countryName, String regionName,
 			String cityName) {
 		super();
 		this.ipFrom = ipFrom;
@@ -94,13 +92,6 @@ public class IPAddressComparator implements Comparator<IPAddressComparator> {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
-
-
-
-	@Override
-	public int compare(IPAddressComparator ipAddress1, IPAddressComparator ipAddress2) {
-		return ipAddress1.getCityName().compareTo(ipAddress2.getCityName());
-	}
 	
 	@Override
 	public String toString() {
@@ -113,4 +104,14 @@ public class IPAddressComparator implements Comparator<IPAddressComparator> {
 		return printOut;
 	}
 
+	@Override
+	public int compareTo(IPAddress newAddress) {
+		if (this.ipFrom > newAddress.ipFrom) {
+			return 1;
+		} else if (this.ipFrom < newAddress.ipFrom){
+			return -1;
+		} else {
+			return 0;
+		}
+	}
 }

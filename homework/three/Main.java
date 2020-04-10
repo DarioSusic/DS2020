@@ -11,6 +11,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Please enter 1 for bubble sort 2 for Binary Search: ");
@@ -19,7 +20,7 @@ public class Main {
 		
 		switch (Integer.parseInt(text)) {
 		case 1:
-			String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED100K.csv";
+			String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED1000.csv";
 			
 			ArrayList<IPAddress> ipList = new ArrayList<>();
 			CSVReader.readCSV(path, ipList);

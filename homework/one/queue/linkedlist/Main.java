@@ -1,4 +1,4 @@
-package lab.two.queue.linkedlist;
+package homework.one.queue.linkedlist;
 
 public class Main {
 
@@ -7,8 +7,13 @@ public class Main {
 		
 		
 		queue.enqueue(1);
+		queue.enqueue(12);
+		queue.enqueue(3);
+		queue.dequeue();
 		queue.dequeue();
 		System.out.println("queue size: " + queue.size());
+		
+		System.out.println(queue.dequeue());
 	}
 
 }
