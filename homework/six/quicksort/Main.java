@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED100K.csv";
+		String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED.csv";
 		long start;
 		
 		ArrayList<IPAddress> ipList = new ArrayList<>();
@@ -16,7 +16,7 @@ public class Main {
 		start = System.currentTimeMillis();
 		QuickSort.sort(arrObjects);
 		System.out.println(
-				"Time elapsed for Recursive Merge Sort: " + (System.currentTimeMillis() - start) + " ms\n");
+				"Time elapsed for Quick Sort: " + (System.currentTimeMillis() - start) + " ms\n");
 		CSVReader.writeCSV(arrObjects, "QUICK-SORT");
 		
 		

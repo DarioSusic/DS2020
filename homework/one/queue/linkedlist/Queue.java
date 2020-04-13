@@ -3,7 +3,7 @@ package homework.one.queue.linkedlist;
 import java.util.NoSuchElementException;
 
 public class Queue<Item> {
-	private final Queue<Item> Item = null;
+	//private final Queue<Item> Item = null;
 	Node<Item> head;
 	Node<Item> tail;
 	private int length = 0;
