@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED1000.csv";
+		String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED.csv";
 		long start;
 		
 		ArrayList<IPAddress> ipList = new ArrayList<>();
@@ -19,6 +19,6 @@ public class Main {
 				"Time elapsed for Binary Heap Sort: " + (System.currentTimeMillis() - start) + " ms\n");
 		CSVReader.writeCSV(arrObjects, "BHS");
 		
-		//Time elapsed for Radix Sort: 13594 ms
+		//Time elapsed for Binary Heap Sort: 7857 ms
 	}
 }
