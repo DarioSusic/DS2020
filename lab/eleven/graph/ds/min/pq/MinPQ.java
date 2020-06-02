@@ -1,6 +1,6 @@
-package lab.eight.binary.heap;
+package lab.eleven.graph.ds.min.pq;
 
-public class BinaryHeap<Item extends Comparable<Item>> {
+public class MinPQ<Item extends Comparable<Item>> {
 	
 	@SuppressWarnings({ "unchecked" })
 	public Item[] pq = (Item[]) new Comparable[2];
@@ -17,6 +17,7 @@ public class BinaryHeap<Item extends Comparable<Item>> {
 	
 	/* Node promotion: 
 	 * swim up a node to its correct position */
+	// k -> p: k/2, c: 2k & 2k + 1
 	private void swim(int k) {
 		while (k > 1 && less(k/2, k)) {		// 1
 			swap(k, k/2);					// 2
@@ -25,7 +26,7 @@ public class BinaryHeap<Item extends Comparable<Item>> {
 	}
 	
 	/* Remove the maximum (max. priority) item  */
-	public Item delMax() {
+	public Item delMin() {
 		Item max = pq[1];								// 1
 		swap(1, length--);								// 2
 		pq[length + 1] = null;							// 3
@@ -76,10 +77,9 @@ public class BinaryHeap<Item extends Comparable<Item>> {
 		pq = copy;												// 3
 	}
 	
-	/* Check which of the two elements is smaller */
+	/* Check which of the two elements is larger */
 	private boolean less(int a, int b) {
-		System.out.println(pq[a].compareTo(pq[b]));
-		return pq[a].compareTo(pq[b]) < 0;
+		return pq[a].compareTo(pq[b]) > 0;
 	}
 	
 	/* Swap the array elements at provided indexes */
