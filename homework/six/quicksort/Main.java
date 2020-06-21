@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED.csv";
+		String path = "C:\\Users\\Dario Susic\\Desktop\\IP-COUNTRY-REGION-CITY-SHUFFLED1000.csv";
 		long start;
 		
 		ArrayList<IPAddress> ipList = new ArrayList<>();

@@ -1,11 +1,5 @@
 package homework.ten.mst;
 
-import lab.eleven.graph.ds.edge.weighted.graph.Edge;
-import lab.eleven.graph.ds.edge.weighted.graph.EdgeWeightedGraph;
-import lab.eleven.graph.ds.min.pq.MinPQ;
-import lab.eleven.graph.ds.queue.regular.Queue;
-import lab.eleven.graph.ds.uf.UF;
-
 public class KruskalMST {
 	private Queue<Edge> mst;	// MST edges
 	

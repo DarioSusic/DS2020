@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import lab.eleven.graph.ds.edge.weighted.graph.Edge;
-import lab.eleven.graph.ds.edge.weighted.graph.EdgeWeightedGraph;
-
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -28,6 +25,12 @@ public class Main {
 		
 		/* Print out MST weight */
 		System.out.println("MST weight: " + kruskal.weight());
+		
+		Iterable<Edge> vertices = ewg.adj(920);
+		
+		for (Edge edge : vertices) {
+			System.out.println(edge.other(920) + " : " + edge.weight());
+		}
 	}
 
 }
